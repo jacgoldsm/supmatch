@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "supmatch"
+version = "2024.7.0"
+classifiers = [
+  "Programming Language :: Python"
+]
+dependencies=[
+"numpy",
+"pandas",
+"scikit-learn"
+]
+requires-python = ">=3.8"
+authors = [
+  {name = "Jacob Goldsmith", email = "jacobg314@hotmail.com"},
+]
+maintainers = [
+  {name = "Jacob Goldsmith", email = "jacobg314@hotmail.com"}
+]
+description = "Simple, Supervised matching algorithm with randomization"
+readme = "README.md"
+license = {text = "MIT License"}

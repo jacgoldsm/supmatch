@@ -11,18 +11,11 @@ python3 -m pip install https://github.com/jacgoldsm/supmatch
 ## Example usage: the diabetes dataset
 
 ```python
-from __future__ import annotations
-
 import numpy as np
-import pandas as pd
-from supmatch import SupmatchRegressor
-from xgboost import XGBRegressor
-from sklearn.model_selection import RandomizedSearchCV, GridSearchCV
-from sklearn.model_selection import KFold
-
+from sklearn.model_selection import RandomizedSearchCV, KFold
 from sklearn.datasets import load_diabetes
 
-rng = np.random.default_rng(seed=1)
+from supmatch import SupmatchRegressor
 
 data = load_diabetes()
 

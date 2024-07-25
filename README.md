@@ -44,7 +44,14 @@ def mse_supmatch():
     param_comb = 100
 
     skf = KFold(n_splits=folds, shuffle = True, random_state = 1001)
-    random_search = RandomizedSearchCV(supmatch, param_distributions=params, n_iter=param_comb, scoring='neg_mean_squared_error', cv=skf.split(X_train,y_train), verbose=3, random_state=1001 )
+    random_search = RandomizedSearchCV(supmatch,
+                    param_distributions=params,
+                    n_iter=param_comb,
+                    scoring='neg_mean_squared_error',
+                    cv=skf.split(X_train,y_train),
+                    verbose=3,
+                    random_state=1001
+                )
 
     random_search.fit(X_train, y_train)
 

@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-   name='supmatch'
+   name='supmatch',
    version='2024.7.0',
    description='Supervised Matching',
    author='Jacob Goldsmith',

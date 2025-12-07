@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 
 from sklearn.base import BaseEstimator, RegressorMixin
+from sklearn.preprocessing import robust_scale
 from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
 
 
@@ -35,7 +36,7 @@ class SupmatchRegressor(RegressorMixin,BaseEstimator):
 
         X,y=check_X_y(X,y)
 
-        X = (X-X.mean(axis=0)) / X.std(axis=0)
+        X = robust_scale(X)
         self._scaled_X = X
         self._y = y
 
@@ -111,7 +112,7 @@ class SupmatchRegressor(RegressorMixin,BaseEstimator):
             newx = np.array(newx)
 
         newx = check_array(newx)
-        normnewx = (newx-newx.mean(axis=0)) / newx.std(axis=0)
+        normnewx = robust_scale(newx)
         for i,model in enumerate(self.get_model_list()):
             if verbose:
                 print("Predicting Round ", i)
